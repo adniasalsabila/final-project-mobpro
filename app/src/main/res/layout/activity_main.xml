@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+        >
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        -->
+<!--        >-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:background="@color/colorCream">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutCovid"
+            android:layout_width="300dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_covid"
+            app:layout_constraintEnd_toEndOf="@+id/tv_head"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_head"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="-8dp"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:listitem="@layout/symptoms" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Hi, Adnia"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:id="@+id/tv_head"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal"
+            android:text="Aplikasi ini akan membantu anda melakukan Karantina Mandiri"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            android:lineSpacingExtra="4dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Syarat Karantina"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutCovid"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCovid" />
+
+        <TextView
+            android:id="@+id/tv_viewAll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View All"
+            app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCovid" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutTrack"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_track"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/recycler_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/recycler_view"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view">
+
+            <TextView
+                android:id="@+id/tv_titleTrack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Anda termasuk ODP \nLakukan karantina mandiri"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.235"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/bt_started"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bt_rounded"
+                android:text="Get Started"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/tv_titleTrack"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_titleTrack"
+                app:layout_constraintTop_toBottomOf="@+id/tv_titleTrack" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_req"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Gejala Covid-19"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTrack" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_req"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:layout_marginLeft="-8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_req"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="@+id/tv_req"
+            app:layout_constraintTop_toBottomOf="@+id/tv_req"
+            tools:listitem="@layout/requirements" />
+
+        <TextView
+            android:id="@+id/tv_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="View All"
+            app:layout_constraintBottom_toTopOf="@+id/recycler_view_req"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.921"
+            app:layout_constraintStart_toEndOf="@+id/tv_req"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTrack" />
+        <!--    </RelativeLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
